@@ -31,9 +31,9 @@
 	
 	Body - {
 		    "taskAssigned" : "testing",
-		    "estimatedTime" : "5 hrs",
-		    "empId" : {
-		        "empId":1
+		    "estimatedTime" : "15 hrs",
+		    "employee" : {
+		        "empId":2
 		    }
 		}
 		
@@ -43,7 +43,7 @@
 		    "taskId":2,
 		    "taskAssigned" : "deployment",
 		    "estimatedTime" : "25 hrs",
-		    "empId" : {
+		    "employee" : {
 		        "empId":1
 		    }
 		}
