@@ -2,10 +2,14 @@ package com.emp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Task {
@@ -20,20 +24,10 @@ public class Task {
 	
 	@ManyToOne()
 	@JoinColumn(name = "empId",nullable = false)
-	private EmployeeDetails empId;
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private EmployeeDetails employee;
 	
-	public Task() {
-		super();
-	}
 	
-	public Task(int taskId, String taskAssigned, String estimatedTime, EmployeeDetails empId) {
-		super();
-		this.taskId = taskId;
-		this.taskAssigned = taskAssigned;
-		this.estimatedTime = estimatedTime;
-		this.empId = empId;
-	}
-
 	public int getTaskId() {
 		return taskId;
 	}
@@ -58,12 +52,12 @@ public class Task {
 		this.estimatedTime = estimatedTime;
 	}
 
-	public EmployeeDetails getEmpId() {
-		return empId;
+	public EmployeeDetails getEmployee() {
+		return employee;
 	}
 
-	public void setEmpId(EmployeeDetails empId) {
-		this.empId = empId;
+	public void setEmployee(EmployeeDetails employee) {
+		this.employee = employee;
 	}
-	
+
 }

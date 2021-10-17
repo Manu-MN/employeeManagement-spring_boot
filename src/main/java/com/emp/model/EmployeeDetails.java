@@ -32,7 +32,7 @@ public class EmployeeDetails {
 	private int empSalary;
 	
 	
-	@OneToMany(mappedBy = "empId") 
+	@OneToMany(mappedBy = "employee") 
 	@JsonIgnore
 	private List<Task> task;
 
